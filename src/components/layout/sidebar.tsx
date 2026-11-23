@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 export function Sidebar() {
   const { path } = useLocation();
   return (
-    <aside className="hidden h-[calc(100vh-3.5rem)] w-64 shrink-0 border-r border-line bg-bar md:block">
-      <ScrollArea className="h-full">
+    <aside className="hidden h-full w-64 shrink-0 flex-col border-r border-line bg-bar md:flex">
+      <ScrollArea className="min-h-0 flex-1">
         <nav className="flex flex-col gap-0.5 p-3">
           {NAV.map((item) => (
             <div key={item.href} className="flex flex-col">
