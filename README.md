@@ -1,17 +1,31 @@
-# Pergament documentation
+# Pergament documentation site
 
-Pergament is an unofficial, community-built reader for `.jwpub` publications. It is not affiliated with or endorsed by Jehovah's Witnesses or the Watch Tower Bible and Tract Society.
+The official documentation site for [Pergament](https://github.com/pergament-project/pergament),
+a quiet reader for `.jwpub` publications. Published at
+<https://pergament-project.github.io/pergament-docs/>.
 
-## Get started
+## Development
 
-- [Install and use Pergament](https://github.com/pergament-project/pergament#readme)
-- [Download a release](https://github.com/pergament-project/pergament/releases)
-- [Report a bug or suggest a feature](https://github.com/pergament-project/pergament/issues/new/choose)
+```sh
+nix develop     # node 22 + bun, from flake.nix
+bun run dev     # dev server on http://localhost:5173/pergament-docs/
+bun run build   # static build to dist/ (for GitHub Pages)
+```
 
-## Contribute
+## Deploy
 
-- [Contributor guide and development setup](https://github.com/pergament-project/pergament/blob/main/CONTRIBUTING.md)
-- [Translate the interface](https://github.com/pergament-project/pergament/blob/main/docs/TRANSLATING.md)
-- [File format notes](https://github.com/pergament-project/pergament/blob/main/docs/FORMAT.md)
+Pushing to `main` runs `.github/workflows/deploy.yml`, which builds `dist/`
+with the Nix dev shell and publishes it to GitHub Pages
+(source must be set to "GitHub Actions" in the repo settings).
 
-The guides live alongside the code so they can be updated in the same pull request. Contributions from translators and developers on every platform are welcome. Please do not include private library data or publication content in public issues.
+## Structure
+
+- `src/pages/` — one component per wiki page (Install, Contribute, Translating,
+  `.jwpub` format, Features, Command line, Sync, Before you use it, …)
+- `src/data/nav.ts` — the wiki navigation tree
+- `src/components/ui/` — shadcn-style primitives on the Tailwind v4 "Ink & amber"
+  palette shared with the app
+- `public/screenshots/` — invented-content screenshots from `pergament/docs/screenshots/`
+
+The site is unofficial and not affiliated with or endorsed by Jehovah's Witnesses
+or the Watch Tower Bible and Tract Society.

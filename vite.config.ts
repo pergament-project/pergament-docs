@@ -4,9 +4,9 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 
 // Docs site lives in the repo root; static build goes to dist/ for GitHub Pages
-// at https://pergament-project.github.io/pergament/ (base "/pergament/").
+// at https://pergament-project.github.io/pergament-docs/ (base "/pergament-docs/").
 export default defineConfig({
-  base: "/pergament/",
+  base: "/pergament-docs/",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) },
