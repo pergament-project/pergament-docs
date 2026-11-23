@@ -126,3 +126,24 @@ body {
     font-weight: 650;
   }
 }
+
+/* Documentation prose: spacing for headings, lists and code inside pages. */
+.prose-docs h2 {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.35rem;
+}
+.prose-docs h3 {
+  margin-top: 1.5rem;
+  font-size: 1.05rem;
+}
+.prose-docs p + p {
+  margin-top: 1rem;
+}
+.prose-docs pre {
+  margin: 0.75rem 0;
+}
+.prose-docs figure {
+  margin: 1.5rem 0;
+}

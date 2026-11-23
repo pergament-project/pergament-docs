@@ -6,6 +6,7 @@ import { defineConfig } from "vite";
 // Docs site lives in the repo root; static build goes to dist/ for GitHub Pages
 // at https://pergament-project.github.io/pergament/ (base "/pergament/").
 export default defineConfig({
+  base: "/pergament/",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) },
@@ -15,7 +16,6 @@ export default defineConfig({
   build: {
     outDir: "dist",
     emptyOutDir: true,
-    base: "./",
     target: "es2020",
   },
 });
