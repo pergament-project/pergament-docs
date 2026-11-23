@@ -37,6 +37,19 @@ export function FeaturesPage() {
       <p>English, German, Portuguese (Brazil), French or Italian; light or dark; a centered or full-width layout; an easy-to-read font; and a second display for the year text, recordings and pictures.</p>
 
       <p>See also: <Link href="/command-line">Command line</Link>, <Link href="/sync">Sync between computers</Link>, <Link href="/before-you-use-it">Before you use it</Link>.</p>
+
+      <figure className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <img
+          src="screenshots/03-bible-study-pane-dark.png"
+          alt="A Bible chapter with highlights and the study pane"
+          className="rounded-lg border border-line"
+        />
+        <img
+          src="screenshots/08-personal-study-light.png"
+          alt="Personal Study with notes, tags and filters"
+          className="rounded-lg border border-line"
+        />
+      </figure>
     </Page>
   );
 }

@@ -8,6 +8,15 @@ export function HomePage() {
       title="Pergament documentation"
       lead="Pergament is an unofficial, community-built reader for <code>.jwpub</code> publications. It is not affiliated with or endorsed by Jehovah&rsquo;s Witnesses or the Watch Tower Bible and Tract Society."
     >
+      <figure className="my-6">
+        <img
+          src="screenshots/01-home-light.png"
+          alt="Home with today's text, favorites and the Teaching Toolbox"
+          className="rounded-lg border border-line"
+        />
+        <figcaption className="mt-2 text-[13px] text-muted">All content shown is invented.</figcaption>
+      </figure>
+
       <h2>Get started</h2>
       <ul className="list-disc pl-6 mb-4 text-fg">
         <li>

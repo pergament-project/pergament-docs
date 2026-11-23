@@ -13,9 +13,9 @@ export default defineConfig({
   clearScreen: false,
   server: { port: 5173, strictPort: true },
   build: {
-    outDir: "../dist",
+    outDir: "dist",
     emptyOutDir: true,
-    base: "/pergament/",
+    base: "./",
     target: "es2020",
   },
 });

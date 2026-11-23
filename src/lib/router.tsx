@@ -33,22 +33,25 @@ export const PAGES: Record<string, Page> = {
   "/not-found": { path: "/not-found", title: "Not found", component: <NotFoundPage /> },
 };
 
+/** The route from the URL hash: "#/get-started/install" -> "/get-started/install". */
 function currentPath(): string {
-  return window.location.pathname.replace(/\/+$/, "") || "/";
+  const h = window.location.hash;
+  return h.length > 1 ? h.slice(1).replace(/\/+$/, "") || "/" : "/";
 }
 
 export function useLocation() {
   const [path, setPath] = useState(currentPath);
 
   useEffect(() => {
-    const onPop = () => setPath(currentPath());
-    window.addEventListener("popstate", onPop);
-    return () => window.removeEventListener("popstate", onPop);
+    const onHash = () => setPath(currentPath());
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
   }, []);
 
   const navigate = (to: string) => {
-    history.pushState(null, "", to);
-    setPath(to);
+    if (window.location.hash === `#${to}`) return;
+    window.location.hash = to;
+    setPath(currentPath());
   };
 
   return { path, navigate };
